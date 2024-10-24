@@ -56,8 +56,8 @@ public final class PhoneNumberFactory{
      */ //TODO - if input is valid, return respective PhoneNumber object, else return null
     public static PhoneNumber createPhoneNumberSafely(int areaCode, int centralOfficeCode, int phoneLineCode) {
       try{
-          String num=  String.valueOf(areaCode+centralOfficeCode+phoneLineCode);
-          return createPhoneNumber(num);
+          String num= "(" + String.valueOf(areaCode) + ")-" + String.valueOf(centralOfficeCode)+"-" + String.valueOf(phoneLineCode);
+          return new PhoneNumber(num);
       }catch(InvalidPhoneNumberFormatException ipfe){
           return null;
       }

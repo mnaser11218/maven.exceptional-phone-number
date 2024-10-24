@@ -29,7 +29,7 @@ public class PhoneNumberFactoryTest {
 
         // : When
         PhoneNumber phoneNumber = PhoneNumberFactory.createPhoneNumberSafely(areaCode, centralOfficeCode, phoneLineCode);
-
+        System.out.println(phoneNumber);
         // : Then
         Assert.assertEquals(null, phoneNumber);
     }
@@ -72,7 +72,7 @@ public class PhoneNumberFactoryTest {
 
         // : When
         PhoneNumber phoneNumber = PhoneNumberFactory.createPhoneNumberSafely(areaCode, centralOfficeCode, phoneLineCode);
-
+        System.out.println(phoneNumber);
         // : Then
         Assert.assertEquals(phoneNumber.getPhoneLineCode(), phoneLineCode.toString());
     }
@@ -85,6 +85,7 @@ public class PhoneNumberFactoryTest {
             PhoneNumber phoneNumber = PhoneNumberFactory.createRandomPhoneNumber();
 
             // : Then
+            System.out.println(phoneNumber + " " + i);
             Assert.assertTrue(phoneNumber != null);
         }
     }
